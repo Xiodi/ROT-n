@@ -9,13 +9,21 @@ our @EXPORT = qw(&rotString);
 sub rotN
 {
     my ($char, $n) = @_;
-    my $op = ($n > 0 ? -26 : 26);
-    if (chr(ord($char) + $n) =~ /[^a-zA-Z]/)
+    if ($char =~ /[a-zA-Z]/)
     {
-	return chr(ord($char) + $n + $op) if (chr(ord($char) + $n + $op) =~ /[a-zA-Z]/);
-	return $char;
+	if (ord($char) < 91)
+	{
+	    return chr(ord($char) + $n + 26) if (ord($char) + $n < 65);
+	    return chr(ord($char) + $n - 26) if (ord($char) + $n > 90);
+	}
+	else
+	{
+	    return chr(ord($char) + $n + 26) if (ord($char) + $n < 97);
+	    return chr(ord($char) + $n - 26) if (ord($char) + $n > 122);
+	}
+	return chr(ord($char) + $n);
     }
-    return chr(ord($char) + $n);
+    return $char;
 }
 
 sub rotString
