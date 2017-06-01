@@ -32,7 +32,7 @@ sub rotString
     my $crypString = "";
     foreach (split //, $string) 
     {
-	$crypString .= ($_ =~ /\S/ ? rotN($_, $n) : $_);
+	$crypString .= rotN($_, $n);
     }
     return $crypString;
 }
