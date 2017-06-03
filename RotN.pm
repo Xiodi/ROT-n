@@ -11,15 +11,15 @@ sub rotN
     my ($char, $n) = @_;
     if ($char =~ /[a-zA-Z]/)
     {
-	if (ord($char) < 91)
+	if (ord($char) <= ord("Z"))
 	{
-	    return chr(ord($char) + $n + 26) if (ord($char) + $n < 65);
-	    return chr(ord($char) + $n - 26) if (ord($char) + $n > 90);
+	    return chr(ord($char) + $n + 26) if (ord($char) + $n < ord("A"));
+	    return chr(ord($char) + $n - 26) if (ord($char) + $n > ord("Z"));
 	}
 	else
 	{
-	    return chr(ord($char) + $n + 26) if (ord($char) + $n < 97);
-	    return chr(ord($char) + $n - 26) if (ord($char) + $n > 122);
+	    return chr(ord($char) + $n + 26) if (ord($char) + $n < ord("a"));
+	    return chr(ord($char) + $n - 26) if (ord($char) + $n > ord("z"));
 	}
 	return chr(ord($char) + $n);
     }
