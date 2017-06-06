@@ -1,7 +1,7 @@
 # ROT-n
 Personal Project of a cryptography script (Caesar Cipher)
 ## Description
-ROT-n is a script using the monoalphabetic substitution of the cryptosystem know as the Caesar Cipher.
+ROT-n is a script using the monoalphabetic substitution of the cryptosystem know as the Caesar Cipher or Shift Cipher.
 ## How to use
 ```
 > ./rotScript.pl {1|2} n sourceFile
